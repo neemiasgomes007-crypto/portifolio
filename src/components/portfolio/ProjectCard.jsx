@@ -17,7 +17,8 @@ export default function ProjectCard({ project }) {
       
       <div className="relative p-6 h-full flex flex-col">
         {/* Project Image */}
-        {project.image_url && (
+        {/* Mostrar imagem apenas se existir e for o projeto da Rose (id '3') */}
+        {project.image_url && project.id === '3' ? (
           <div className="mb-6 rounded-lg overflow-hidden aspect-video bg-white/5">
             <img
               src={project.image_url}
@@ -25,6 +26,17 @@ export default function ProjectCard({ project }) {
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
             />
+          </div>
+        ) : (
+          // Placeholder estilizado para projetos sem imagem
+          <div className="mb-6 rounded-lg overflow-hidden aspect-video bg-gradient-to-br from-purple-600 via-blue-500 to-cyan-400 flex items-center justify-center">
+            <div className="text-center px-4">
+              <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-white">{(project.title || '').split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase()}</span>
+              </div>
+              <h4 className="text-white font-semibold">{project.title}</h4>
+              <p className="text-white/80 text-sm mt-1">{project.tags && project.tags.slice(0,2).join(' • ')}</p>
+            </div>
           </div>
         )}
 

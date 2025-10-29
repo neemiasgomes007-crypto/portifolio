@@ -21,12 +21,23 @@ export default function ProjectModal({ project, isOpen, onClose }) {
         <div className="p-6">
           {/* Imagem */}
           <div className="rounded-lg overflow-hidden aspect-video mb-6">
-              <img
-                src={project.image || project.image_url}
-                alt={project.title}
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                className="w-full h-full object-cover"
-              />
+              {project.image_url && project.id === '3' ? (
+                <img
+                  src={project.image || project.image_url}
+                  alt={project.title}
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-64 rounded-lg shadow-lg bg-gradient-to-br from-purple-600 via-blue-500 to-cyan-400 flex items-center justify-center">
+                  <div className="text-center px-4">
+                    <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-3">
+                      <span className="text-xl font-bold text-white">{(project.title || '').split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase()}</span>
+                    </div>
+                    <h3 className="text-white font-semibold">{project.title}</h3>
+                  </div>
+                </div>
+              )}
           </div>
 
           {/* Info */}

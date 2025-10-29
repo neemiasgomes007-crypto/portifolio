@@ -105,11 +105,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-purple-500 rounded-full blur-2xl opacity-20 animate-pulse" />
                 
-                <img 
-                  src="/neemias.png"
-                  alt="Neemias"
-                  className="relative w-80 md:w-96 h-auto rounded-3xl shadow-2xl border-4 border-white/10 group-hover:border-purple-500/50 transition-all duration-500 group-hover:scale-105"
-                />
+                {/* Substituído imagem pessoal por componente 3D/placeholder para evitar foto que não carrega */}
+                <div className="relative w-80 md:w-96 h-auto rounded-3xl shadow-2xl border-4 border-white/10 transition-all duration-500">
+                  <Hero3D />
+                </div>
                 
                 {/* Floating particles around image */}
                 <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-cyan-500/30 rounded-full blur-2xl animate-pulse" />
