@@ -1,0 +1,30 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Nome do projeto"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição do projeto"
+    },
+    "url": {
+      "type": "string",
+      "description": "Link do projeto"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "URL da imagem do projeto"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tecnologias utilizadas"
+    }
+  },
+  "required": ["title", "url"]
+}
