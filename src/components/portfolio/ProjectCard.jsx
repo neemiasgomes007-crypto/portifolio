@@ -19,9 +19,10 @@ export default function ProjectCard({ project }) {
         {/* Project Image */}
         {project.image_url && (
           <div className="mb-6 rounded-lg overflow-hidden aspect-video bg-white/5">
-            <img 
-              src={project.image_url} 
+            <img
+              src={project.image_url}
               alt={project.title}
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
             />
           </div>

@@ -21,11 +21,12 @@ export default function ProjectModal({ project, isOpen, onClose }) {
         <div className="p-6">
           {/* Imagem */}
           <div className="rounded-lg overflow-hidden aspect-video mb-6">
-            <img 
-              src={project.image_url} 
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
+              <img
+                src={project.image || project.image_url}
+                alt={project.title}
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                className="w-full h-full object-cover"
+              />
           </div>
 
           {/* Info */}

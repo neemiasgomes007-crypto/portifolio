@@ -10,7 +10,8 @@ export const base44 = {
             title: 'Café do Geremias',
             description: 'Site elegante para cafeteria com design moderno e responsivo. Interface intuitiva para apresentação de produtos e cardápio.',
             url: 'https://neemiasgomes007-crypto.github.io/cafedogeremias/',
-            image_url: '/cafe  do neemias.png',
+            // imagens estáticas devem ficar em /public/images
+            image_url: '/images/cafe-do-neemias.png',
             tags: ['HTML', 'CSS', 'JavaScript', 'Responsivo']
           },
           {
@@ -18,7 +19,7 @@ export const base44 = {
             title: 'Starbuck Clone',
             description: 'Clone da interface do Starbucks com animações suaves e design fiel. Demonstração de habilidades em replicar interfaces complexas.',
             url: 'https://neemiasgomes007-crypto.github.io/starbuckneemias/',
-            image_url: '/capa starbucks.png',
+            image_url: '/images/capa-starbucks.png',
             tags: ['HTML', 'CSS', 'JavaScript', 'UI/UX']
           },
           {
